@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  test:
+    commands:
+      - echo Running linting...
+      - npm run lint
+      - echo Running tests...
+      - npm run test
+
+  
+
+artifacts:
+  files:
+    - '**/*'
+
+cache:
+  paths:
+    - node_modules/**/*
