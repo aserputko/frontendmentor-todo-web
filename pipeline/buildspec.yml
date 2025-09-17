@@ -29,7 +29,6 @@ artifacts:
   files:
     - '**/*'
   base-directory: dist
-  name: frontend-build-$(date +%Y-%m-%d)
 
 cache:
   paths:
