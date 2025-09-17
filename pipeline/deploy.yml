@@ -10,3 +10,6 @@ phases:
       - echo Deploy completed, starting CloudFront invalidation...
       - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
+artifacts:
+  files:
+    - '**/*'
