@@ -5,7 +5,18 @@ env:
     CLOUDFRONT_DISTRIBUTION_ID: "E2LZRHO53SZ4RG"
 
 phases:
-  build:
+
+  pre_build:
     commands:
       - echo Deploy completed, starting CloudFront invalidation...
+  build:
+    commands:
       - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
+  post_build:
+    commands:
+      - echo Deploy completed
+
+artifacts:
+  files:
+    - '**/*'
