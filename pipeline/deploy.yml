@@ -1,0 +1,12 @@
+version: 0.2
+
+env:
+  variables:
+    CLOUDFRONT_DISTRIBUTION_ID: "E2LZRHO53SZ4RG"
+
+phases:
+  build:
+    commands:
+      - echo Deploy completed, starting CloudFront invalidation...
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
